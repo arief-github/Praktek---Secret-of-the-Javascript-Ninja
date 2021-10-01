@@ -1,0 +1,16 @@
+1. What are two phases in the lifecycle of a client web app?
+A : these 2 phase is : 1. Page Building , and 2. Event Handling
+
+2. What is the main advantage of using the addEventListener method to register an event?
+the main advantage of using the addEventListener method is enable us to register as many event-handler function as we need.
+
+3. How many event can be processed at once? 
+Just one event, and other event is wait for queue
+
+4. In what order are events from the event queue processed?
+wait until one event is finished. then browser do the other event. if there's no event. browser always checking.
+
+
+Kapabilitas function
+1. Dibuat dengan iterals
+

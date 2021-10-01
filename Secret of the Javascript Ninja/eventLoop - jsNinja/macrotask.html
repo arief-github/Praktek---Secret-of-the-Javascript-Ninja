@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="firstButton">first button</button>
+  <button id="secondButton">second button</button>
+  <script type="text/javascript">
+    const firstButton = document.getElementById("firstButton");
+    const secondButton = document.getElementById("secondButton");
+
+    firstButton.addEventListener("click", function firstHandler(){
+      Promise.resolve().then(() => {
+        alert("Click promise");
+      });
+      alert("you click first button");
+    })
+
+
+    secondButton.addEventListener("click", function secondHandler(){
+      alert("you click second button");
+    })
+  </script>
+</body>
+
+</html>

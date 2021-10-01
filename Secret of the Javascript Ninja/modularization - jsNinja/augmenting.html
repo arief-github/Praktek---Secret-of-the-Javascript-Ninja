@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    li.pass {
+      color: green;
+    }
+
+    li.fail {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="results"></div>
+
+<script type="text/javascript">
+  function assert(value, desc) {
+    var li = document.createElement("li");
+    li.className = value ? "pass" : "fail";
+    li.appendChild(document.createTextNode(desc));
+    document.getElementById("results").appendChild(li);
+  }
+  window.onload = function() {
+    assert(true, "The test suite is running.");
+    assert(false, "Fail");
+  };
+
+  const MouseConterModules = function(){
+    let numClicks = 0;
+    const handleClick = () => {
+      alert(++numClicks);
+    };
+    return {
+      countClicks: () => {
+        document.addEventListener("click", handleClick);
+      }
+    }
+  }();
+
+  (function(module){
+    let numScrolls = 0;
+    const handleScroll = () => {
+      alert(++numScrolls);
+    }
+
+    module.countScrolls = () => {
+      document.addEventListener("wheel", handleScroll);
+    }
+  })(MouseConterModules);
+assert(typeof MouseConterModules.countClicks === "function", "we can access initial module functionality");
+assert(typeof MouseConterModules.countScrolls === "function", "we can access augmented module functionality");
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8 />
+  <title>JS Bin</title>
+  <style>
+    li.pass {
+      color: green;
+    }
+
+    li.fail {
+      color: red;
+    }
+  </style>
+  <script>
+    function assert(value, desc) {
+      var li = document.createElement("li");
+      li.className = value ? "pass" : "fail";
+      li.appendChild(document.createTextNode(desc));
+      document.getElementById("results").appendChild(li);
+    }
+    // window.onload = function() {
+    //   assert(true, "The test suite is running.");
+    //   assert(false, "Fail");
+    // };
+  </script>
+</head>
+
+<body>
+  <ul id="results"></ul>
+  <div id="firstElement"></div>
+  <div id="secondElement"></div>
+  <script>
+    const map = new Map();
+    const currentLocation = location.href;
+
+    const firstLink = new URL(currentLocation);
+    const secondLink = new URL(currentLocation);
+
+    map.set(firstLink, {
+      description: "firstLink"
+    }).set(secondLink, {
+      description: "secondLink"
+    });
+
+    assert(map.get(firstLink).description === "firstLink", "FirstLink Mapping");
+    assert(map.get(secondLink).description === "secondLink", "secondLink Mapping");
+    assert(map.size === 2, "There are two mappings");
+  </script>
+</body>
+
+</html>

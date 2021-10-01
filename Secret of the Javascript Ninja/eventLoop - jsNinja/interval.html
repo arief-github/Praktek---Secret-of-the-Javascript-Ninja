@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>setTimeout and setInterval</title>
+</head>
+<body>
+  <button id="my-button">Click Me!</button>
+  <script type="text/javascript">
+    setTimeout(function timeoutHandler(){
+      console.log('run code in 6000ms');
+    }, 6000);
+
+    setInterval(function intervalHandler(){
+      console.log('run code in 8000ms');
+    }, 8000);
+
+    const myButton = document.getElementById("my-button");
+    myButton.addEventListener("click", function clickHandler(){
+      alert('You clicked me!')
+    }, 10000)
+
+    setTimeout(() => {
+      alert('Hello show for 18ms');
+    },18000);
+  </script>
+</body>
+</html>

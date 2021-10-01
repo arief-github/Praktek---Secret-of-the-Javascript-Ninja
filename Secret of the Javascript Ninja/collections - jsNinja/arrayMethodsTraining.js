@@ -1,0 +1,21 @@
+// const isNinja = [];
+// isNinja.push("Aori");
+// isNinja.push("Nokata");
+// isNinja.pop();
+// isNinja.unshift('Balika');
+// isNinja.unshift('Aoyama');
+// isNinja.shift();
+// isNinja.splice(0, 2, "Kalimana", "Opsoe");
+// isNinja.splice(0, 2);
+// console.log(isNinja);
+
+const isCarModel = [];
+// isCarModel.push("Mercedez Benz");
+// isCarModel.push("BMW");
+// isCarModel.pop();
+// isCarModel.unshift("Audy");
+// isCarModel.unshift("VW");
+// isCarModel.shift();
+// isCarModel.shift();
+// isCarModel.splice(1, 1, "Avanza", "Kijang");
+// console.log(isCarModel);
